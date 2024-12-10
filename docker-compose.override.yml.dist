@@ -1,0 +1,13 @@
+services:
+  smartheads-nginx:
+    ports:
+      - "8080:80"
+
+  smartheads-db:
+    ports:
+      - "3308:5432"
+
+  smartheads-mailer:
+    ports:
+      - "1080:1080"
+      - "1025:1025"
