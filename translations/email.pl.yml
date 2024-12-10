@@ -1,0 +1,7 @@
+user_message:
+  first_line: 'Cześć. Ktoś próbował się z tobą skontaktować'
+  params:
+    name: 'Imię: name'
+    national_identification_number: 'Pesel: nationalIdentificationNumber'
+    email: 'Email: email'
+    message: 'Treść wiadomości: message'

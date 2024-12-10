@@ -1,5 +1,6 @@
 parameters:
-
+    app.email_from: '%env(APP_EMAIL_FROM)%'
+    app.email_to: '%env(APP_EMAIL_TO)%'
 services:
     _defaults:
         autowire: true
