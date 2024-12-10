@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% import 'layout/base_row.html.twig' as formRow %}
+
+{% block title %}{{ 'login.title'|trans({},'ui') }}{% endblock %}
+
+{% block body %}
+    {% block login_form %}
+        <section id="login">
+            <div class="d-flex justify-content-center">
+                <div class="card col-3">
+                    <div class="card-body">
+                        {{ form_start(form) }}
+                        <h5 class="text-center">{{ 'login.title'|trans({},'ui') }}</h5>
+
+                        {{ formRow.baseRow(form._email) }}
+                        {{ formRow.baseRow(form._password) }}
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <button type="submit"
+                                class="col-12 btn btn-success btn-lg text-uppercase">
+                            {{ 'login.button'|trans({},'ui') }}
+                        </button>
+
+                        {% if error %}
+                            <div class="text-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endblock %}
+{% endblock %}

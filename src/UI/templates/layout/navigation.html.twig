@@ -5,8 +5,17 @@
                 <a class="nav-link" href="{{ path('ui_home') }}">{{ "navigation.home"|trans({}, 'ui') }}</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ path('ui_contact') }}">{{ "navigation.contact"|trans({}, 'ui') }}</a>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    <a class="nav-link" href="{{ path('ui_contact_list') }}">{{ "navigation.contact_list"|trans({}, 'ui') }}</a>
+                {% else %}
+                    <a class="nav-link" href="{{ path('ui_contact') }}">{{ "navigation.contact"|trans({}, 'ui') }}</a>
+                {% endif %}
             </li>
         </ul>
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            <a class="nav-link px-3 text-center" href="{{ path('logout') }}">{{ "actions.logout"|trans({}, 'ui') }}</a>
+        {% else %}
+            <a class="nav-link px-3 text-center" href="{{ path('security_login') }}">{{ "actions.login"|trans({}, 'ui') }}</a>
+        {% endif %}
     </div>
 </div>
