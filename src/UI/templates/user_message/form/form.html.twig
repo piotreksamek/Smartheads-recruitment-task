@@ -1,0 +1,27 @@
+{% import 'layout/base_row.html.twig' as formRow %}
+
+{% block fields %}
+    {{ form_start(form) }}
+    {% block name %}
+        {{ formRow.baseRow(form.name) }}
+    {% endblock %}
+
+    {% block nationalIdentificationNumber %}
+        {{ formRow.baseRow(form.nationalIdentificationNumber) }}
+    {% endblock %}
+
+    {% block email %}
+        {{ formRow.baseRow(form.email) }}
+    {% endblock %}
+
+    {% block message %}
+        {{ formRow.baseRow(form.message) }}
+    {% endblock %}
+
+    {% block button_save %}
+        <button type="submit" class="btn btn-primary"
+                formnovalidate>{{ 'actions.save'|trans({},'ui') }}</button>
+    {% endblock %}
+
+    {{ form_end(form) }}
+{% endblock %}

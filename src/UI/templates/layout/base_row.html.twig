@@ -1,0 +1,10 @@
+{% macro baseRow(field) %}
+    <div class="row form-group mb-2">
+        {{ form_label(field, null, {'label_attr': {'style': 'margin: 0;'}}) }}
+        <div>
+            {{ form_widget(field) }}
+            {{ form_help(field) }}
+            {{ form_errors(field) }}
+        </div>
+    </div>
+{% endmacro %}

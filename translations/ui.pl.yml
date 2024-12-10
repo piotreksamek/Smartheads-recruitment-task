@@ -1,0 +1,26 @@
+login:
+  button: 'Zaloguj'
+  title: 'Logowanie'
+actions:
+  save: 'Wyślij'
+navigation:
+  contact: 'Kontakt'
+  home: 'Strona główna'
+user_message:
+  form:
+    name: 'Imię*'
+    nationalIdentificationNumber: 'Pesel*'
+    email: 'Email*'
+    message: 'Treść wiadomości'
+  view:
+    create:
+      title: "Wyślij formularz kontaktowy"
+      success: 'Pomyślnie wysłano formularz'
+    list:
+      title: "Lista osób które chciały się skontaktować"
+      name: 'Imię'
+      email: 'Email'
+      nationalIdentificationNumber: 'Pesel'
+      message: 'Wiadomość'
+      date: 'Data'
+      isSent: 'Wysłana'

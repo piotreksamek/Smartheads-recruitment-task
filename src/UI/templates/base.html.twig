@@ -13,7 +13,23 @@
     {% endblock %}
 </head>
 <body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    {% block navigation %}
+        {% include 'layout/navigation.html.twig' %}
+    {% endblock %}
+</nav>
 <div class="container mt-5">
+    <main>
+    {% block flash_message %}
+    <div class="alert alert-warning d-none" data-element="alert-warning-invalid-validation-js">
+    </div>
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message|trans({},'ui') }}
+        </div>
+    {% endfor %}
+        {% endblock %}
+    </main>
     {% block body %}{% endblock %}
 </div>
 </body>

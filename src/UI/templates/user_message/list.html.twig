@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ "user_message.view.list.title"|trans({},'ui') }}{% endblock %}
+
+{% block body %}
+    {% block body_title %}
+        <h3>{{ "user_message.view.list.title"|trans({},'ui') }}</h3>
+    {% endblock %}
+
+    <div>
+        <div class="tab-content">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">{{ "user_message.view.list.name"|trans({},'ui') }}</th>
+                    <th scope="col">{{ "user_message.view.list.email"|trans({},'ui') }}</th>
+                    <th scope="col">{{ "user_message.view.list.nationalIdentificationNumber"|trans({},'ui') }}</th>
+                    <th scope="col">{{ "user_message.view.list.message"|trans({},'ui') }}</th>
+                    <th scope="col">{{ "user_message.view.list.date"|trans({},'ui') }}</th>
+                    <th scope="col">{{ "user_message.view.list.isSent"|trans({},'ui') }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for index, userMessage in userMessages %}
+                    <tr>
+                        <th scope="row">{{ index + 1 }}</th>
+                        <td>{{ userMessage.name }}</td>
+                        <td>{{ userMessage.email }}</td>
+                        <td>{{ userMessage.nationalIdentificationNumber }}</td>
+                        <td>{{ userMessage.message }}</td>
+                        <td>
+                            {{ userMessage.sentAt ? userMessage.sentAt|date('Y-m-d H:i:s') : '-' }}
+                        </td>
+                        <td>{{ userMessage.isSent }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
