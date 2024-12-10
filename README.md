@@ -29,7 +29,7 @@ php bin/console doctrine:migrations:migrate
 php bin/console importmap:install
 php bin/console ca:cl
 ```
-Żeby skorzystać z formularza. Potrzebujemy stworzyć usera poprzez komendę CLI:
+Żeby zobaczyć rekordy z formularza. Potrzebujemy stworzyć usera poprzez komendę CLI, a następnie się zalogować w panelu:
 ```
 docker compose exec -it smartheads-app bash
 php bin/console app:create-user {poprawny adres email} {hasło >= 8 liter}
