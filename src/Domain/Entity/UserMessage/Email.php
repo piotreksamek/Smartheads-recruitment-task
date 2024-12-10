@@ -25,9 +25,4 @@ class Email
     {
         return filter_var($value, FILTER_VALIDATE_EMAIL) !== false;
     }
-
-    public function getEmail(): string
-    {
-        return $this->email;
-    }
 }

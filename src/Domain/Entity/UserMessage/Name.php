@@ -19,11 +19,6 @@ class Name
         self::isValid($name);
     }
 
-    public function getName(): string
-    {
-        return $this->name;
-    }
-
     public static function isValid(string $name): void
     {
         if (empty(trim($name))) {

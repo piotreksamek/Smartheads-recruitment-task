@@ -18,7 +18,7 @@ class NationalIdentificationNumberValidator extends ConstraintValidator
             throw new UnexpectedTypeException($constraint, NationalIdentificationNumber::class);
         }
 
-        if (null === $value || '' === $value) {
+        if ($value === null || $value === '') {
             return false;
         }
 
@@ -26,7 +26,8 @@ class NationalIdentificationNumberValidator extends ConstraintValidator
             NationalIdentificationNumberVO::validate($value);
         } catch (InvalidNationalIdentificationNumber $e) {
             $this->context->buildViolation($constraint->message)
-                ->addViolation();
+                ->addViolation()
+            ;
 
             return false;
         }

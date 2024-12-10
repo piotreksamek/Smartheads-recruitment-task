@@ -30,7 +30,7 @@
                         <td>{{ userMessage.nationalIdentificationNumber }}</td>
                         <td>{{ userMessage.message }}</td>
                         <td>
-                            {{ userMessage.sentAt ? userMessage.sentAt|date('Y-m-d H:i:s') : '-' }}
+                            {{ userMessage.sentAt ? userMessage.sentAt|date('Y-m-d') : '-' }}
                         </td>
                         <td>{{ userMessage.isSent }}</td>
                     </tr>

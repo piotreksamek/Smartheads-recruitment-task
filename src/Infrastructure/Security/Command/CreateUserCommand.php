@@ -19,7 +19,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 #[AsCommand(name: self::NAME, description: 'Create a user')]
 class CreateUserCommand extends Command
 {
-    const NAME = 'app:create-user';
+    public const NAME = 'app:create-user';
 
     public function __construct(
         private readonly UserFactory $userFactory,

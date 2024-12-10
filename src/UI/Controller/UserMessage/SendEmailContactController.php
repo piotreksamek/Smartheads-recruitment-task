@@ -19,7 +19,7 @@ class SendEmailContactController extends AbstractController
     #[Route('/contact', name: 'ui_contact', methods: ['GET', 'POST'])]
     public function __invoke(Request $request, MessageBusInterface $bus)
     {
-        $dto = new UserMessageDto();
+        $dto = new UserMessageDTO();
 
         $form = $this->createForm(UserMessageFormType::class, $dto);
 
@@ -37,7 +37,7 @@ class SendEmailContactController extends AbstractController
         }
 
         return $this->render('user_message/create.html.twig', [
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 }

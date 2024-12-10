@@ -18,7 +18,7 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 #[AsMessageHandler]
 readonly class SendMailCommandHandler
 {
-    const CONTACT_EMAIL_TITLE = 'New contact email';
+    public const CONTACT_EMAIL_TITLE = 'New contact email';
 
     public function __construct(
         #[Autowire('%app.email_from%')]
@@ -35,18 +35,21 @@ readonly class SendMailCommandHandler
     public function __invoke(SendMailCommand $message)
     {
         $template = $this->templateRenderer->render(
-            '/mail/user_message_mail.html.twig', [
+            '/mail/user_message_mail.html.twig',
+            [
                 'email' => $message->email,
                 'message' => $message->message,
                 'name' => $message->name,
                 'nationalIdentificationNumber' => $message->nationalIdentificationNumber,
-        ]);
+            ]
+        );
 
         $email = EmailBuilder::create()
             ->from($this->from)
             ->to($this->to)
             ->withContent(self::CONTACT_EMAIL_TITLE, $template)
-            ->build();
+            ->build()
+        ;
 
         try {
             $this->contactMailer->send($email);

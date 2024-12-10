@@ -20,12 +20,12 @@ class LoginFormType extends AbstractType
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
-                ]
+                ],
             ])
             ->add('_password', PasswordType::class, [
                 'constraints' => [
                     new NotBlank(),
-                ]
+                ],
             ])
         ;
     }
