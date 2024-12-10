@@ -3,8 +3,11 @@ login:
   title: 'Logowanie'
 actions:
   save: 'Wyślij'
+  login: 'Zaloguj'
+  logout: 'Wyloguj'
 navigation:
   contact: 'Kontakt'
+  contact_list: 'Lista kontaktów'
   home: 'Strona główna'
 user_message:
   form:
