@@ -13,7 +13,8 @@ use Symfony\Component\Messenger\Attribute\AsMessageHandler;
 class GetUserMessagesQueryHandler
 {
     public function __construct(private readonly UserMessageRepositoryInterface $repository)
-    {}
+    {
+    }
 
     public function __invoke(GetUserMessagesQuery $messages): array
     {

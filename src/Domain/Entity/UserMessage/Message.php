@@ -19,11 +19,6 @@ class Message
         self::isValid($this->message);
     }
 
-    public function getMessage(): ?string
-    {
-        return $this->message;
-    }
-
     public static function isValid(string $message): void
     {
         if (strlen($message) > 1000) {

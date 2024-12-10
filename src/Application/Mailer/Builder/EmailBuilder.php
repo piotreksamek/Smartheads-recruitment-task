@@ -23,7 +23,8 @@ class EmailBuilder
     public function from(string $from): self
     {
         $this->email
-            ->from($from);
+            ->from($from)
+        ;
 
         return $this;
     }
@@ -31,7 +32,8 @@ class EmailBuilder
     public function to(string $to): self
     {
         $this->email
-            ->to($to);
+            ->to($to)
+        ;
 
         return $this;
     }
@@ -40,7 +42,8 @@ class EmailBuilder
     {
         $this->email
             ->subject($subject)
-            ->html($htmlContent);
+            ->html($htmlContent)
+        ;
 
         return $this;
     }

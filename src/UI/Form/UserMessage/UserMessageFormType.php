@@ -25,26 +25,26 @@ class UserMessageFormType extends AbstractType
                 'constraints' => [
                     new NotBlank(),
                     new Length(max: 50),
-                ]
+                ],
             ])
             ->add('nationalIdentificationNumber', TextType::class, [
                 'constraints' => [
                     new NotBlank(),
                     new NationalIdentificationNumber(),
-                ]
+                ],
             ])
             ->add('email', EmailType::class, [
                 'constraints' => [
                     new NotBlank(),
                     new Email(),
-                ]
+                ],
             ])
             ->add('message', TextareaType::class, [
                 'constraints' => [
                     new Length(max: 1000),
-                ]
+                ],
             ])
-            ;
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void

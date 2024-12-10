@@ -19,11 +19,6 @@ class NationalIdentificationNumber
         self::validate($nationalIdentificationNumber);
     }
 
-    public function getNationalIdentificationNumber(): string
-    {
-        return $this->nationalIdentificationNumber;
-    }
-
     public static function validate(string $nationalIdentificationNumber): void
     {
         if (!preg_match('/^[0-9]{11}$/', $nationalIdentificationNumber)) {
@@ -33,7 +28,7 @@ class NationalIdentificationNumber
         $arrSteps = [1, 3, 7, 9, 1, 3, 7, 9, 1, 3];
         $intSum = 0;
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 10; ++$i) {
             $intSum += $arrSteps[$i] * $nationalIdentificationNumber[$i];
         }
 
