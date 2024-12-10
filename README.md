@@ -36,3 +36,6 @@ php bin/console app:create-user {poprawny adres email} {hasło >= 8 liter}
 np:
 php bin/console app:create-user piotreksamek07@gmail.com test1234
 ```
+
+Wysłane maile znadjują się w kontenerze MailCatcher'a
+defaultowy port: http://localhost:1080/
