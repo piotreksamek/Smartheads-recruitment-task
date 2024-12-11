@@ -25,9 +25,8 @@ docker compose up -d
 
 ```
 docker compose exec -it smartheads-app bash
+composer install
 php bin/console doctrine:migrations:migrate
-php bin/console importmap:install
-php bin/console ca:cl
 ```
 Żeby zobaczyć rekordy z formularza. Potrzebujemy stworzyć usera poprzez komendę CLI, a następnie się zalogować w panelu:
 ```
